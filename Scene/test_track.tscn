@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bt8uny4ic3y1m"]
+
+[ext_resource type="Script" uid="uid://c58u46mp5sjxs" path="res://Scene/rc_chassis_controller.gd" id="1_5w7j2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5rvyy"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5w7j2"]
+sky_material = SubResource("ProceduralSkyMaterial_5rvyy")
+
+[sub_resource type="Environment" id="Environment_1kkwf"]
+background_mode = 2
+sky = SubResource("Sky_5w7j2")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5w7j2"]
+albedo_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7cxud"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q20vf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q20vf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cxud"]
+
+[node name="TestTrack" type="Node3D" unique_id=1295023103]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=301104358]
+environment = SubResource("Environment_1kkwf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=791616299]
+transform = Transform3D(1, 0, 0, 0, 0.4094479, 0.9123335, 0, -0.9123335, 0.4094479, 0, 7.4915066, 0)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1898008132]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=226372575]
+transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 40, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_5w7j2")
+mesh = SubResource("BoxMesh_7cxud")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=300026893]
+transform = Transform3D(39.999996, 0, 0, 0, 1, 0, 0, 0, 39.999996, 0, 0, 0)
+shape = SubResource("BoxShape3D_q20vf")
+
+[node name="RCBuggy" type="RigidBody3D" parent="." unique_id=1438879586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mass = 3.0
+linear_damp = 0.1
+angular_damp = 1.0
+script = ExtResource("1_5w7j2")
+
+[node name="Chassis" type="MeshInstance3D" parent="RCBuggy" unique_id=1642031335]
+transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_q20vf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RCBuggy" unique_id=20257455]
+transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_7cxud")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1999355639]
+transform = Transform3D(1, 0, 0, 0, 0.7224059, 0.6914692, 0, -0.6914692, 0.7224059, -1.0235438, 6.274251, 16.733297)
