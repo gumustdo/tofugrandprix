@@ -1,0 +1,9 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1793371077
+icon.svg::CompressedTexture2D::8719640152197492800::1793362967::1793371077::1::::<><><>0<>0<>683c4b4576a74fc50fb76ce5ce0081b7<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1793370886::0::1::::<><><>0<>0<><>::
+::res://Scene/::1793372511
+walls.tscn::PackedScene::2961874897583253543::1793371769::0::1::::<><><>0<>0<><>::
+test_track.tscn::PackedScene::3789372039602798624::1793372540::0::1::::<><><>0<>0<><>::uid://c58u46mp5sjxs::::res://Scene/rc_chassis_controller.gd<>uid://big0v8y6l8m0n::::res://Scene/walls.tscn
+::res://Scripts/::0
+rc_chassis_controller.gd::GDScript::6947898917773565076::1793369658::0::1::::<>RigidBody3D<><>0<>0<><>::
