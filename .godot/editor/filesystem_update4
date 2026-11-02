@@ -1,2 +1,3 @@
 res://Scene/test_track.tscn
-res://Scene/walls.tscn
+res://Scene/rc_buggy.tscn
+res://Scripts/rc_suspension.gd

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bgqgb0y82swni"]
+
+[ext_resource type="Script" uid="uid://c58u46mp5sjxs" path="res://Scripts/rc_chassis_controller.gd" id="1_x8dkp"]
+[ext_resource type="Script" uid="uid://ll221kyluqgc" path="res://Scripts/rc_suspension.gd" id="2_kermk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1kkwf"]
+bounce = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kkwf"]
+albedo_color = Color(1, 0.023529412, 0.101960786, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q20vf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cxud"]
+
+[node name="RCBuggy" type="RigidBody3D" unique_id=458650679]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mass = 3.0
+physics_material_override = SubResource("PhysicsMaterial_1kkwf")
+linear_damp = 0.1
+angular_damp = 1.0
+script = ExtResource("1_x8dkp")
+acceleration = 13.0
+max_speed = 15.0
+steering_strength = 4.0
+
+[node name="Chassis" type="MeshInstance3D" parent="." unique_id=862020518]
+transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_1kkwf")
+mesh = SubResource("BoxMesh_q20vf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2007153412]
+transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_7cxud")
+
+[node name="Wheels" type="Node3D" parent="." unique_id=527346263]
+script = ExtResource("2_kermk")
+
+[node name="FrontLeft" type="Node3D" parent="Wheels" unique_id=919953821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.1, -0.65)
+
+[node name="SuspensionRay" type="RayCast3D" parent="Wheels/FrontLeft" unique_id=1427847837]
+target_position = Vector3(0, -0.6, 0)
+
+[node name="FrontRight" type="Node3D" parent="Wheels" unique_id=1984657125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.1, -0.65)
+
+[node name="SuspensionRay" type="RayCast3D" parent="Wheels/FrontRight" unique_id=996619073]
+target_position = Vector3(0, -0.6, 0)
+
+[node name="RearLeft" type="Node3D" parent="Wheels" unique_id=687782023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.1, 0.65)
+
+[node name="SuspensionRay" type="RayCast3D" parent="Wheels/RearLeft" unique_id=851449683]
+
+[node name="RearRight" type="Node3D" parent="Wheels" unique_id=727043737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.1, 0.65)
+
+[node name="SuspensionRay" type="RayCast3D" parent="Wheels/RearRight" unique_id=590536347]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bt8uny4ic3y1m"]
 
-[ext_resource type="Script" uid="uid://c58u46mp5sjxs" path="res://Scripts/rc_chassis_controller.gd" id="1_5w7j2"]
+[ext_resource type="PackedScene" uid="uid://bgqgb0y82swni" path="res://Scene/rc_buggy.tscn" id="1_1kkwf"]
 [ext_resource type="PackedScene" uid="uid://big0v8y6l8m0n" path="res://Scene/walls.tscn" id="2_1kkwf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5rvyy"]
@@ -24,17 +24,10 @@ size = Vector3(1.4326172, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_q20vf"]
 size = Vector3(1.4287109, 1, 1)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1kkwf"]
-bounce = 0.4
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kkwf"]
-albedo_color = Color(1, 0.023529412, 0.101960786, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_q20vf"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7cxud"]
-
 [node name="TestTrack" type="Node3D" unique_id=1295023103]
+
+[node name="RCBuggy2" parent="." unique_id=1690199980 instance=ExtResource("1_1kkwf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5325375, 0, 13.53491)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=301104358]
 environment = SubResource("Environment_1kkwf")
@@ -53,25 +46,6 @@ mesh = SubResource("BoxMesh_7cxud")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=300026893]
 transform = Transform3D(39.999996, 0, 0, 0, 1, 0, 0, 0, 39.999996, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_q20vf")
-
-[node name="RCBuggy" type="RigidBody3D" parent="." unique_id=1438879586]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.2873688, 1, 13.881975)
-mass = 3.0
-physics_material_override = SubResource("PhysicsMaterial_1kkwf")
-linear_damp = 0.1
-angular_damp = 1.0
-script = ExtResource("1_5w7j2")
-acceleration = 15.0
-max_speed = 15.0
-
-[node name="Chassis" type="MeshInstance3D" parent="RCBuggy" unique_id=1642031335]
-transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_1kkwf")
-mesh = SubResource("BoxMesh_q20vf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RCBuggy" unique_id=20257455]
-transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
-shape = SubResource("BoxShape3D_7cxud")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1999355639]
 transform = Transform3D(1, 0, 0, 0, 0.5884049, 0.80856645, 0, -0.80856645, 0.5884049, 0.5969119, 23.83478, 23.302132)
