@@ -1,9 +1,11 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1793516935
+::res://::1794050169
 icon.svg::CompressedTexture2D::8719640152197492800::1793516779::1793516779::1::::<><><>0<>0<>683c4b4576a74fc50fb76ce5ce0081b7<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1793516779::0::1::::<><><>0<>0<><>::
-::res://Scene/::1793516779
-test_track.tscn::PackedScene::3789372039602798624::1793516779::0::1::::<><><>0<>0<><>::uid://c58u46mp5sjxs::::res://Scripts/rc_chassis_controller.gd<>uid://big0v8y6l8m0n::::res://Scene/walls.tscn
+::res://Scene/::1793590694
+rc_buggy.tscn::PackedScene::2840951229031998458::1793590620::0::1::::<><><>0<>0<><>::uid://c58u46mp5sjxs::::res://Scripts/rc_chassis_controller.gd<>uid://ll221kyluqgc::::res://Scripts/rc_suspension.gd
+test_track.tscn::PackedScene::3789372039602798624::1793590694::0::1::::<><><>0<>0<><>::uid://bgqgb0y82swni::::res://Scene/rc_buggy.tscn<>uid://big0v8y6l8m0n::::res://Scene/walls.tscn
 walls.tscn::PackedScene::2961874897583253543::1793516779::0::1::::<><><>0<>0<><>::
-::res://Scripts/::1793516779
+::res://Scripts/::1793529380
 rc_chassis_controller.gd::GDScript::6947898917773565076::1793516779::0::1::::<>RigidBody3D<><>0<>0<><>::
+rc_suspension.gd::GDScript::796474392714243038::1793529380::0::1::::<>Node3D<><>0<>0<><>::

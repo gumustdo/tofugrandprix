@@ -20,9 +20,9 @@ physics_material_override = SubResource("PhysicsMaterial_1kkwf")
 linear_damp = 0.1
 angular_damp = 1.0
 script = ExtResource("1_x8dkp")
-acceleration = 13.0
-max_speed = 15.0
-steering_strength = 4.0
+acceleration = 10.0
+max_speed = 13.0
+steering_strength = 6.0
 
 [node name="Chassis" type="MeshInstance3D" parent="." unique_id=862020518]
 transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 2, 0, 0, 0)
@@ -35,6 +35,8 @@ shape = SubResource("BoxShape3D_7cxud")
 
 [node name="Wheels" type="Node3D" parent="." unique_id=527346263]
 script = ExtResource("2_kermk")
+spring_strength = 80.0
+lateral_grip = 50.0
 
 [node name="FrontLeft" type="Node3D" parent="Wheels" unique_id=919953821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.1, -0.65)

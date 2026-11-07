@@ -28,6 +28,8 @@ size = Vector3(1.4287109, 1, 1)
 
 [node name="RCBuggy2" parent="." unique_id=1690199980 instance=ExtResource("1_1kkwf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5325375, 0, 13.53491)
+acceleration = 8.0
+steering_strength = 6.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=301104358]
 environment = SubResource("Environment_1kkwf")

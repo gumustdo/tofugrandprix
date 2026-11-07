@@ -1,3 +1,2 @@
-res://Scene/test_track.tscn
 res://Scene/rc_buggy.tscn
-res://Scripts/rc_suspension.gd
+res://Scripts/rc_chassis_controller.gd
